@@ -1,0 +1,32 @@
+/* HERO */
+
+.hero{
+    display: flex;
+    padding: var(--padding-lg);
+}
+
+.hero .left, .hero .right{
+    display: flex;
+    flex: 1;
+}
+
+/* POPULAR */
+
+.popular{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: var(--padding-lg);
+}
+
+.popular .categories{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+/* TOP MENU */
+.top-menu{
+    padding: var(--padding-lg);
+    background-color: gray;
+}

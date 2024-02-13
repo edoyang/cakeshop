@@ -1,0 +1,35 @@
+:root{
+    /* PADDING VARIABLES */
+    --padding-lg: 50px;
+}
+
+html, body, *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 var(--padding-lg);
+}
+
+header > * , header > * > *{
+    text-decoration: none;
+    color: black;
+}
+
+header .menu {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+header .util{
+    display: flex;
+    text-align: center;
+    align-items: center;
+}

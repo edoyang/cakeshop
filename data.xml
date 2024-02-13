@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cakeshop>
+  <cake category="Chocolate Delight">
+    <pic>
+      <img src="assets/cake1.jpg"/>
+    </pic>
+    <heading>Chocolate cake</heading>
+    <price>$19.95</price>
+    <description>This is a Chocolate cake</description>
+    <filter>
+      <flavor>Chocolate</flavor>
+      <occasion>Any</occasion>
+      <type>Layer</type>
+      <dietary>None</dietary>
+      <origin>American</origin>
+      <texture>Moist</texture>
+    </filter>
+  </cake>
+
+  <cake category="Chocolate Smooth">
+    <pic>
+      <img src="assets/cake2.jpg"/>
+    </pic>
+    <heading>Chocolate muse</heading>
+    <price>$20.95</price>
+    <description>This is a Chocolate muse</description>
+    <filter>
+      <flavor>Chocolate</flavor>
+      <occasion>Any</occasion>
+      <type>Mousse</type>
+      <dietary>None</dietary>
+      <origin>French</origin>
+      <texture>Smooth</texture>
+    </filter>
+  </cake>
+
+  <cake category="International Specialty">
+    <pic>
+      <img src="assets/cake3.jpg"/>
+    </pic>
+    <heading>Tiramisu</heading>
+    <price>$21.95</price>
+    <description>This is a Tiramisu</description>
+    <filter>
+      <flavor>Coffee</flavor>
+      <occasion>Any</occasion>
+      <type>Custard</type>
+      <dietary>None</dietary>
+      <origin>Italian</origin>
+      <texture>Layered</texture>
+    </filter>
+  </cake>
+
+  <cake category="Celebration Centerpiece">
+    <pic>
+      <img src="assets/cake4.jpg"/>
+    </pic>
+    <heading>Ferrero Lava</heading>
+    <price>$40.55</price>
+    <description>Chocolate cake with chocolate buttercream finished with chocolate ganache, Ferrero Rochers, Tim Tams, and Maltesers</description>
+    <filter>
+      <flavor>Chocolate</flavor>
+      <occasion>Celebration</occasion>
+      <type>Lava</type>
+      <dietary>None</dietary>
+      <origin>American</origin>
+      <texture>Rich</texture>
+    </filter>
+  </cake>
+
+  <cake category="Luxury Choice">
+    <pic>
+      <img src="assets/cake5.png"/>
+    </pic>
+    <heading>Luxe Royal</heading>
+    <price>$55.50</price>
+    <description>This is Luxe Royal</description>
+    <filter>
+      <flavor>Vanilla</flavor>
+      <occasion>Luxury</occasion>
+      <type>Layer</type>
+      <dietary>None</dietary>
+      <origin>French</origin>
+      <texture>Fluffy</texture>
+    </filter>
+  </cake>
+</cakeshop>
