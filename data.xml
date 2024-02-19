@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cakeshop>
-  <cake category="Chocolate Delight">
+  <cake category="Any">
     <pic>
       <img src="assets/cake1.jpg"/>
     </pic>
@@ -9,7 +9,6 @@
     <description>This is a Chocolate cake</description>
     <filter>
       <flavor>Chocolate</flavor>
-      <occasion>Any</occasion>
       <type>Layer</type>
       <dietary>None</dietary>
       <origin>American</origin>
@@ -17,7 +16,7 @@
     </filter>
   </cake>
 
-  <cake category="Chocolate Smooth">
+  <cake category="Any">
     <pic>
       <img src="assets/cake2.jpg"/>
     </pic>
@@ -26,7 +25,6 @@
     <description>This is a Chocolate muse</description>
     <filter>
       <flavor>Chocolate</flavor>
-      <occasion>Any</occasion>
       <type>Mousse</type>
       <dietary>None</dietary>
       <origin>French</origin>
@@ -34,7 +32,7 @@
     </filter>
   </cake>
 
-  <cake category="International Specialty">
+  <cake category="Birthday">
     <pic>
       <img src="assets/cake3.jpg"/>
     </pic>
@@ -43,7 +41,6 @@
     <description>This is a Tiramisu</description>
     <filter>
       <flavor>Coffee</flavor>
-      <occasion>Any</occasion>
       <type>Custard</type>
       <dietary>None</dietary>
       <origin>Italian</origin>
@@ -51,7 +48,7 @@
     </filter>
   </cake>
 
-  <cake category="Celebration Centerpiece">
+  <cake category="Any">
     <pic>
       <img src="assets/cake4.jpg"/>
     </pic>
@@ -60,7 +57,6 @@
     <description>Chocolate cake with chocolate buttercream finished with chocolate ganache, Ferrero Rochers, Tim Tams, and Maltesers</description>
     <filter>
       <flavor>Chocolate</flavor>
-      <occasion>Celebration</occasion>
       <type>Lava</type>
       <dietary>None</dietary>
       <origin>American</origin>
@@ -68,7 +64,7 @@
     </filter>
   </cake>
 
-  <cake category="Luxury Choice">
+  <cake category="Wedding">
     <pic>
       <img src="assets/cake5.png"/>
     </pic>
@@ -77,7 +73,6 @@
     <description>This is Luxe Royal</description>
     <filter>
       <flavor>Vanilla</flavor>
-      <occasion>Luxury</occasion>
       <type>Layer</type>
       <dietary>None</dietary>
       <origin>French</origin>

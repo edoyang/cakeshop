@@ -1,6 +1,13 @@
 :root{
     /* PADDING VARIABLES */
     --padding-lg: 50px;
+    --padding-md: 30px;
+    --padding-sm: 20px;
+
+    /* COLOR VARIABLE */
+    --white: #ffffff;
+    --black: #000000;
+    --black-light: #00000030;
 }
 
 html, body, *{
@@ -14,11 +21,17 @@ header{
     justify-content: space-between;
     height: 50px;
     padding: 0 var(--padding-lg);
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: var(--white);
+    align-items: center;
 }
 
 header > * , header > * > *{
     text-decoration: none;
-    color: black;
+    color: var(--black);
+    z-index: 1;
 }
 
 header .menu {
@@ -32,4 +45,75 @@ header .util{
     display: flex;
     text-align: center;
     align-items: center;
+}
+
+line{
+    display: block;
+    width: 100%;
+    outline: 1px solid var(--black-light);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.responsive-appear{
+    display: none;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: var(--black);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+@media screen and (max-width:768px) {
+    header .menu{
+        position: absolute;
+        display: none;
+        right: 0;
+        top: 0;
+        width: 50vw;
+        height: 100dvh;
+        background-color: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 75px;
+    }
+
+    header .active{
+        display: flex;
+    }
+
+    .responsive-appear{
+        display: block;
+    }
+
+    .responsive-disappear{
+        display: none;
+    }
 }

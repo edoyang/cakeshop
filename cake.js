@@ -1,18 +1,47 @@
 window.onload = function() {
-    loadXMLDoc();
-  }
-  
-  function loadXMLDoc() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+  loadXMLDoc();
+}
+
+function loadXMLDoc() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        displayCakes(this);
-        generateFilters(this);
+          displayCakes(this);
+          generateFilters(this);
+          updateCategoryCounts(this);
       }
-    };
-    xmlhttp.open("GET", "data.xml", true);
-    xmlhttp.send();
+  };
+  xmlhttp.open("GET", "data.xml", true);
+  xmlhttp.send();
+}
+
+function updateCategoryCounts(xml) {
+  var xmlDoc = xml.responseXML;
+  var cakes = xmlDoc.getElementsByTagName("cake");
+  var categoryCounts = { 'Birthday': 0, 'Wedding': 0, 'Any': 0 };
+  var totalCount = 0; 
+
+  for (var i = 0; i < cakes.length; i++) {
+      var category = cakes[i].getAttribute("category");
+      totalCount++;
+
+      if (categoryCounts.hasOwnProperty(category)) {
+          categoryCounts[category]++;
+      }
   }
+
+  function updateCategoryHTML(className, count) {
+    var categoryElements = document.querySelectorAll('.' + className + ' p'); // Select all <p> tags within the given class
+    categoryElements.forEach(function(element) {
+        element.textContent = `(${count} cakes)`; // Update text content
+    });
+}
+
+  updateCategoryHTML('birthday-cake', categoryCounts['Birthday']);
+  updateCategoryHTML('wedding-cake', categoryCounts['Wedding']);
+  updateCategoryHTML('any-cake', categoryCounts['Any']);
+  updateCategoryHTML('browse', totalCount); 
+}
   
   function displayCakes(xml) {
     var i, xmlDoc, cake, html = "";
@@ -28,9 +57,9 @@ window.onload = function() {
   
       html += `<div class="cake" category="${category}" flavor="${flavor}">
                 <div class="pic"><img src="${imgSrc}" alt="${heading}"></div>
-                <h2>${heading}</h2>
-                <p>Price: ${price}</p>
-                <p>Description: ${description}</p>
+                <h2 class="cake-heading">${heading}</h2>
+                <p class="cake-price">Price: ${price}</p>
+                <p class="cake-description">Description: ${description}</p>
               </div><br>`;
     }
     document.getElementById("demo").innerHTML = html;

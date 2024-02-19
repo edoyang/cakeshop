@@ -1,13 +1,60 @@
-.demo{
+.carousel{
+    display: grid;
+    gap: 20px;
+}
+
+#filters{
+    display: block;
+}
+
+#demo{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     display: flex;
-    flex-direction: column;
+    overflow-x: auto;
+    gap: 30px;
+    justify-content: start;
+}
+
+@media screen and (max-width: 768px){
+    #demo{
+        scroll-snap-type: x mandatory;
+    }
+}
+
+#demo::-webkit-scrollbar { 
+    display: none;
 }
 
 .cake{
+    flex: 0 0 auto;
     border: 1px solid black;
+    background-color: var(--white);
+    padding: var(--padding-md);
+    min-width: 300px;
+    max-width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    scroll-snap-align: center;
 }
 
 .cake img{
-    height: 200px;
-    width: 200px;
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 200px;
+}
+
+.cake-heading, .cake-price{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cake-description{
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
 }
