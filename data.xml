@@ -79,4 +79,165 @@
       <texture>Fluffy</texture>
     </filter>
   </cake>
+
+  <cake category="Any">
+    <pic>
+      <img src="assets/cake6.jpg"/>
+    </pic>
+    <heading>Red Velvet Delight</heading>
+    <price>$22.95</price>
+    <description>Decadent red velvet cake with cream cheese frosting</description>
+    <filter>
+      <flavor>Red Velvet</flavor>
+      <type>Layer</type>
+      <dietary>None</dietary>
+      <origin>American</origin>
+      <texture>Velvety</texture>
+    </filter>
+  </cake>
+
+  <cake category="Birthday">
+    <pic>
+      <img src="assets/cake7.jpg"/>
+    </pic>
+    <heading>Strawberry Shortcake</heading>
+    <price>$18.99</price>
+    <description>Light sponge cake layered with fresh strawberries and whipped cream</description>
+    <filter>
+      <flavor>Strawberry</flavor>
+      <type>Shortcake</type>
+      <dietary>None</dietary>
+      <origin>American</origin>
+      <texture>Light</texture>
+    </filter>
+  </cake>
+
+  <cake category="Any">
+    <pic>
+      <img src="assets/cake8.jpg"/>
+    </pic>
+    <heading>Lemon Bliss</heading>
+    <price>$17.95</price>
+    <description>Zesty lemon cake with lemon buttercream frosting</description>
+    <filter>
+      <flavor>Lemon</flavor>
+      <type>Layer</type>
+      <dietary>None</dietary>
+      <origin>American</origin>
+      <texture>Refreshing</texture>
+    </filter>
+  </cake>
+
+  <cake category="Wedding">
+    <pic>
+      <img src="assets/cake9.png"/>
+    </pic>
+    <heading>Elegant White Wedding</heading>
+    <price>$65.00</price>
+    <description>Classic white wedding cake with delicate fondant details</description>
+    <filter>
+      <flavor>Vanilla</flavor>
+      <type>Layer</type>
+      <dietary>None</dietary>
+      <origin>European</origin>
+      <texture>Elegant</texture>
+    </filter>
+  </cake>
+
+  <cake category="Any">
+    <pic>
+      <img src="assets/cake10.jpg"/>
+    </pic>
+    <heading>Carrot Dream</heading>
+    <price>$19.95</price>
+    <description>Moist carrot cake with cream cheese frosting and walnut garnish</description>
+    <filter>
+      <flavor>Carrot</flavor>
+      <type>Layer</type>
+      <dietary>None</dietary>
+      <origin>American</origin>
+      <texture>Rich</texture>
+    </filter>
+  </cake>
+  
+   <cake category="Birthday">
+    <pic>
+      <img src="assets/cake11.jpg"/>
+    </pic>
+    <heading>Blueberry Burst</heading>
+    <price>$24.95</price>
+    <description>Indulgent blueberry cake with layers of blueberry compote and whipped cream</description>
+    <filter>
+      <flavor>Blueberry</flavor>
+      <type>Layer</type>
+      <dietary>None</dietary>
+      <origin>American</origin>
+      <texture>Luscious</texture>
+    </filter>
+  </cake>
+
+  <cake category="Any">
+    <pic>
+      <img src="assets/cake12.jpg"/>
+    </pic>
+    <heading>Pistachio Paradise</heading>
+    <price>$23.50</price>
+    <description>Delicate pistachio cake with layers of pistachio cream and chopped nuts</description>
+    <filter>
+      <flavor>Pistachio</flavor>
+      <type>Layer</type>
+      <dietary>None</dietary>
+      <origin>Middle Eastern</origin>
+      <texture>Light</texture>
+    </filter>
+  </cake>
+
+  <cake category="Wedding">
+    <pic>
+      <img src="assets/cake13.png"/>
+    </pic>
+    <heading>Romantic Rose</heading>
+    <price>$70.00</price>
+    <description>Exquisite rose-flavored cake adorned with edible rose petals</description>
+    <filter>
+      <flavor>Rose</flavor>
+      <type>Layer</type>
+      <dietary>None</dietary>
+      <origin>French</origin>
+      <texture>Dainty</texture>
+    </filter>
+  </cake>
+
+  <cake category="Any">
+    <pic>
+      <img src="assets/cake14.jpg"/>
+    </pic>
+    <heading>Coconut Dream</heading>
+    <price>$21.95</price>
+    <description>Decadent coconut cake with coconut cream filling and shredded coconut topping</description>
+    <filter>
+      <flavor>Coconut</flavor>
+      <type>Layer</type>
+      <dietary>None</dietary>
+      <origin>Tropical</origin>
+      <texture>Flavorful</texture>
+    </filter>
+  </cake>
+
+  <cake category="Birthday">
+    <pic>
+      <img src="assets/cake15.jpg"/>
+    </pic>
+    <heading>Caramel Crunch</heading>
+    <price>$26.99</price>
+    <description>Rich caramel cake with layers of caramel sauce and crunchy caramel bits</description>
+    <filter>
+      <flavor>Caramel</flavor>
+      <type>Layer</type>
+      <dietary>None</dietary>
+      <origin>American</origin>
+      <texture>Decadent</texture>
+    </filter>
+  </cake>
+
 </cakeshop>

@@ -1,6 +1,7 @@
 .carousel{
     display: grid;
     gap: 20px;
+    width: 100%;
 }
 
 #filters{

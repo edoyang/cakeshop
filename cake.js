@@ -148,28 +148,25 @@ function initializeCakeClickEvents() {
   });
 }
   
-  function generateFilters(xml) {
-    var xmlDoc = xml.responseXML;
-    var flavors = xmlDoc.getElementsByTagName("flavor");
-    var uniqueFlavors = Array.from(new Set(Array.prototype.map.call(flavors, function(el) { return el.childNodes[0].nodeValue; })));
-    
-    var filterHTML = 'Filter by flavor: <select id="flavorFilter" onchange="filterCakes()"><option value="all">All</option>';
-    uniqueFlavors.forEach(function(flavor) {
-      filterHTML += `<option value="${flavor}">${flavor}</option>`;
-    });
-    filterHTML += '</select>';
-    
-    document.getElementById("filters").innerHTML = filterHTML;
+function generateFilters(xml) {
+  var xmlDoc = xml.responseXML;
+  var flavors = xmlDoc.getElementsByTagName("flavor");
+  var uniqueFlavors = Array.from(new Set(Array.prototype.map.call(flavors, el => el.childNodes[0].nodeValue)));
+
+  var filterHTML = 'Filter by flavor: <select id="flavorFilter" onchange="filterCakes(window.xmlData)"><option value="all">All</option>';
+  uniqueFlavors.forEach(flavor => {
+    filterHTML += `<option value="${flavor}">${flavor}</option>`;
+  });
+  filterHTML += '</select>';
+
+  document.getElementById("filters").innerHTML = filterHTML;
+}
+
+function filterCakes(xml) {
+  var filterValue = document.getElementById("flavorFilter").value;
+  if (filterValue === "all") {
+    displayCakes(xml);
+  } else {
+    displayCakes(xml, filterValue);
   }
-  
-  function filterCakes() {
-    var filterValue = document.getElementById("flavorFilter").value;
-    var cakes = document.getElementsByClassName("cake");
-    Array.prototype.forEach.call(cakes, function(cake) {
-      if (filterValue === "all" || cake.getAttribute("flavor") === filterValue) {
-        cake.style.display = "";
-      } else {
-        cake.style.display = "none";
-      }
-    });
-  }
+}

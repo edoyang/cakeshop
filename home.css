@@ -3,11 +3,29 @@
 .hero{
     display: flex;
     padding: var(--padding-lg);
+    min-height: 60vh;
+    gap: 50px;
+}
+
+.hero .right img{
+    width: 100%;
+}
+
+.hero .right .svg{
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .hero .left, .hero .right{
     display: flex;
+    justify-content: center;
+    flex-direction: column;
     flex: 1;
+    position: relative;
 }
 
 /* POPULAR */
