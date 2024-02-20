@@ -5,14 +5,83 @@ window.onload = function() {
 function loadXMLDoc() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          displayCakes(this);
-          generateFilters(this);
-          updateCategoryCounts(this);
-      }
+    if (this.readyState == 4 && this.status == 200) {
+      window.xmlData = this;
+      displayCakes(this);
+      generateFilters(this);
+      updateCategoryCounts(this);
+      initializeCakeClickEvents();
+    }
   };
   xmlhttp.open("GET", "data.xml", true);
   xmlhttp.send();
+}
+
+function showCakeDetails(cake) {
+  var overlay = document.getElementById('cake-overlay') || createOverlay();
+  var details = document.getElementById('cake-details') || createDetailsContainer();
+
+  // Populate details based on the clicked cake, assuming your corrected innerHTML assignment
+  details.innerHTML = `<div class="pic"><img src="${cake.querySelector('.pic img').src}" alt="${cake.querySelector('.cake-heading').textContent}" /></div>
+                       <h2>${cake.querySelector('.cake-heading').textContent}</h2>
+                       <p>${cake.querySelector('.cake-price').textContent}</p>
+                       <p>${cake.querySelector('.cake-description').textContent}</p>
+                       <button onclick="hideCakeDetails()">Close</button>`;
+
+  // Prepare elements for animation
+  overlay.style.opacity = 0;
+  details.style.opacity = 0;
+  details.style.transform = 'translate(-50%, -50%) scale(0.5)';
+
+  // Ensure elements are visible
+  overlay.style.display = 'block';
+  details.style.display = 'block';
+
+  // Force reflow to ensure transitions are triggered
+  details.offsetHeight;
+
+  // Apply final styles to trigger the transition
+  overlay.style.opacity = 1;
+  details.style.opacity = 1;
+  details.style.transform = 'translate(-50%, -50%) scale(1)';
+}
+
+function hideCakeDetails() {
+  var overlay = document.getElementById('cake-overlay');
+  var details = document.getElementById('cake-details');
+
+  // Start the hide transition
+  overlay.style.opacity = 0;
+  details.style.opacity = 0;
+  details.style.transform = 'translate(-50%, -50%) scale(0.5)';
+
+  // Wait for the transition to finish before hiding the elements
+  setTimeout(() => {
+      overlay.style.display = 'none';
+      details.style.display = 'none';
+  }, 500); // Match the duration of the CSS transition
+}
+
+function createOverlay() {
+  var overlay = document.createElement('div');
+  overlay.id = 'cake-overlay';
+  overlay.className = 'cake-active';
+  overlay.addEventListener('click', hideCakeDetails);
+  document.body.appendChild(overlay);
+  return overlay;
+}
+
+function createDetailsContainer() {
+  var details = document.createElement('div');
+  details.id = 'cake-details';
+  details.className = 'cake-active-content';
+  document.body.appendChild(details);
+  return details;
+}
+
+function hideCakeDetails() {
+  document.getElementById('cake-overlay').style.display = 'none';
+  document.getElementById('cake-details').style.display = 'none';
 }
 
 function updateCategoryCounts(xml) {
@@ -43,27 +112,41 @@ function updateCategoryCounts(xml) {
   updateCategoryHTML('browse', totalCount); 
 }
   
-  function displayCakes(xml) {
-    var i, xmlDoc, cake, html = "";
-    xmlDoc = xml.responseXML;
-    cake = xmlDoc.getElementsByTagName("cake");
-    for (i = 0; i < cake.length; i++) {
-      let category = cake[i].getAttribute("category");
-      let imgSrc = cake[i].getElementsByTagName("img")[0].getAttribute("src");
-      let heading = cake[i].getElementsByTagName("heading")[0].childNodes[0].nodeValue;
-      let price = cake[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
-      let description = cake[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
-      let flavor = cake[i].getElementsByTagName("filter")[0].getElementsByTagName("flavor")[0].childNodes[0].nodeValue;
-  
-      html += `<div class="cake" category="${category}" flavor="${flavor}">
-                <div class="pic"><img src="${imgSrc}" alt="${heading}"></div>
-                <h2 class="cake-heading">${heading}</h2>
-                <p class="cake-price">Price: ${price}</p>
-                <p class="cake-description">Description: ${description}</p>
-              </div><br>`;
-    }
-    document.getElementById("demo").innerHTML = html;
+function displayCakes(xml, filterFlavor = null) {
+  var xmlDoc = xml.responseXML;
+  var cakes = xmlDoc.getElementsByTagName("cake");
+  var html = "";
+  for (var i = 0; i < cakes.length; i++) {
+    let flavor = cakes[i].getElementsByTagName("filter")[0].getElementsByTagName("flavor")[0].childNodes[0].nodeValue;
+
+    if (filterFlavor !== null && filterFlavor !== flavor) continue;
+
+    let category = cakes[i].getAttribute("category");
+    let imgSrc = cakes[i].getElementsByTagName("img")[0].getAttribute("src");
+    let heading = cakes[i].getElementsByTagName("heading")[0].childNodes[0].nodeValue;
+    let price = cakes[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+    let description = cakes[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+
+    html += `<div class="cake" category="${category}" flavor="${flavor}">
+              <div class="pic"><img src="${imgSrc}" alt="${heading}" /></div>
+              <h2 class="cake-heading">${heading}</h2>
+              <p class="cake-price">Price: ${price}</p>
+              <p class="cake-description">Description: ${description}</p>
+            </div><br>`;
   }
+  document.getElementById("demo").innerHTML = html;
+  // Re-initialize click events whenever cakes are displayed/filtered
+  initializeCakeClickEvents();
+}
+
+function initializeCakeClickEvents() {
+  var cakes = document.querySelectorAll('.cake');
+  cakes.forEach(cake => {
+    cake.addEventListener('click', function() {
+      showCakeDetails(cake);
+    });
+  });
+}
   
   function generateFilters(xml) {
     var xmlDoc = xml.responseXML;

@@ -61,7 +61,7 @@ line{
 }
 
 .hamburger {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
@@ -87,6 +87,18 @@ line{
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.primary-button{
+    text-decoration: none;
+    color: var(--black);
+    border: none;
+    width: 100px;
+    background-color: var(--white);
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 
@@ -115,5 +127,9 @@ line{
 
     .responsive-disappear{
         display: none;
+    }
+
+    .hamburger{
+        display: flex;
     }
 }

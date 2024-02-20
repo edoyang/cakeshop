@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - element.offsetLeft;
-        const walk = (x - startX) * 1; // The number 3 determines the scroll speed
+        const walk = (x - startX) * 1; 
         element.scrollLeft = scrollLeft - walk;
     });
 });

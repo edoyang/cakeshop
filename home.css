@@ -29,4 +29,13 @@
 .top-menu{
     padding: var(--padding-lg);
     background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.top-menu .menu-title{
+    align-self: start;
 }
