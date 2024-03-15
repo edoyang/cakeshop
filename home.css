@@ -35,12 +35,36 @@
     flex-direction: column;
     text-align: center;
     padding: var(--padding-lg);
+    gap: 50px;
 }
 
 .popular .categories{
     display: flex;
     text-align: center;
     justify-content: space-between;
+}
+
+.popular .categories div{
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: var(--padding-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.popular .categories img{
+    width: 150px;
+    height: 150px;
+}
+
+.popular .categories .any{
+    width: 150px;
+    height: 150px;
+    border: 1px solid var(--black);
+    padding: 30px;
+    border-radius: 100px;
 }
 
 /* TOP MENU */

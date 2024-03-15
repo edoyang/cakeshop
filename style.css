@@ -19,6 +19,7 @@ html, body, *{
 header{
     display: flex;
     justify-content: space-between;
+    z-index: 10;
     height: 50px;
     padding: 0 var(--padding-lg);
     position: sticky;

@@ -130,8 +130,8 @@ function displayCakes(xml, filterFlavor = null) {
     html += `<div class="cake" category="${category}" flavor="${flavor}">
               <div class="pic"><img src="${imgSrc}" alt="${heading}" /></div>
               <h2 class="cake-heading">${heading}</h2>
-              <p class="cake-price">Price: ${price}</p>
-              <p class="cake-description">Description: ${description}</p>
+              <p class="cake-price">${price}</p>
+              <p class="cake-description">${description}</p>
             </div><br>`;
   }
   document.getElementById("demo").innerHTML = html;
